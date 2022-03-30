@@ -16,6 +16,7 @@ public class Data {
     private String powerDay;
     private String error;
     private Date date;
+    private Device device;
 
     @Id
     @Column(name = "id", nullable = false)
@@ -116,5 +117,29 @@ public class Data {
     @Override
     public int hashCode() {
         return Objects.hash(id, energyResetSum, powerSum, energyDayStart, energyDay, powerDay, error, date);
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "device_id", referencedColumnName = "id")
+    public Device getDevice() {
+        return device;
+    }
+
+    public void setDevice(Device device) {
+        this.device = device;
+    }
+
+    @Override
+    public String toString() {
+        return "Data{" +
+                "id=" + id +
+                ", energyResetSum='" + energyResetSum + '\'' +
+                ", powerSum='" + powerSum + '\'' +
+                ", energyDayStart='" + energyDayStart + '\'' +
+                ", energyDay='" + energyDay + '\'' +
+                ", powerDay='" + powerDay + '\'' +
+                ", error='" + error + '\'' +
+                ", date=" + date +
+                '}';
     }
 }

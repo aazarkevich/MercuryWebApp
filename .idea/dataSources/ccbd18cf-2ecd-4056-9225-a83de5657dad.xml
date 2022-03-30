@@ -3,7 +3,7 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.16">
     <root id="1">
       <ServerVersion>9.1.21</ServerVersion>
-      <StartupTime>1646777745</StartupTime>
+      <StartupTime>1647347172</StartupTime>
     </root>
     <database id="2" parent="1" name="mercury">
       <ObjectId>41943</ObjectId>
@@ -16,7 +16,7 @@
     <database id="4" parent="1" name="mercury2022">
       <ObjectId>65564</ObjectId>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>281582</IntrospectionStateNumber>
+      <IntrospectionStateNumber>291465</IntrospectionStateNumber>
       <Current>1</Current>
     </database>
     <database id="5" parent="1" name="postgres">
@@ -52,7 +52,7 @@
       <Comment>standard public schema</Comment>
       <StateNumber>2</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>281595</IntrospectionStateNumber>
+      <IntrospectionStateNumber>291478</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <access-method id="11" parent="4" name="btree">
@@ -117,12 +117,12 @@
     <table id="21" parent="10" name="podstation">
       <ObjectId>65608</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>280049</StateNumber>
+      <StateNumber>291384</StateNumber>
     </table>
     <table id="22" parent="10" name="res">
       <ObjectId>65598</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>277863</StateNumber>
+      <StateNumber>290332</StateNumber>
     </table>
     <column id="23" parent="19" name="id">
       <Position>1</Position>
@@ -247,7 +247,8 @@
     <column id="41" parent="20" name="res_id">
       <Position>8</Position>
       <DataType>bigint|0s</DataType>
-      <StateNumber>277852</StateNumber>
+      <NotNull>1</NotNull>
+      <StateNumber>291117</StateNumber>
       <TypeId>20</TypeId>
     </column>
     <column id="42" parent="20" name="podstation_id">
@@ -263,14 +264,19 @@
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <key id="44" parent="20" name="devices_pkey">
+    <index id="44" parent="20" name="fki_devkce_res_id_fk_res_id">
+      <ObjectId>81959</ObjectId>
+      <StateNumber>291264</StateNumber>
+      <ColNames>res_id</ColNames>
+    </index>
+    <key id="45" parent="20" name="devices_pkey">
       <ObjectId>65569</ObjectId>
       <StateNumber>267455</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>devices_pkey</UnderlyingIndexName>
     </key>
-    <foreign-key id="45" parent="20" name="devices_res_id_fk_res_id">
+    <foreign-key id="46" parent="20" name="devices_res_id_fk_res_id">
       <ObjectId>65603</ObjectId>
       <StateNumber>277853</StateNumber>
       <ColNames>res_id</ColNames>
@@ -280,7 +286,7 @@
       <RefKeyName>res_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="46" parent="20" name="devices_podstation_id_fk_podstation_id">
+    <foreign-key id="47" parent="20" name="devices_podstation_id_fk_podstation_id">
       <ObjectId>73756</ObjectId>
       <StateNumber>280049</StateNumber>
       <ColNames>podstation_id</ColNames>
@@ -290,58 +296,64 @@
       <RefKeyName>podstation_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="47" parent="21" name="id">
+    <column id="48" parent="21" name="id">
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>277863</StateNumber>
+      <StateNumber>291263</StateNumber>
+      <DefaultExpression>nextval(&apos;podstation_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>20</TypeId>
     </column>
-    <column id="48" parent="21" name="name">
+    <column id="49" parent="21" name="name">
       <Position>2</Position>
       <DataType>varchar|0s</DataType>
       <StateNumber>277863</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="49" parent="21" name="type_connection">
+    <column id="50" parent="21" name="type_connection">
       <Position>3</Position>
       <DataType>&quot;char&quot;|0s</DataType>
       <StateNumber>277863</StateNumber>
       <TypeId>18</TypeId>
     </column>
-    <column id="50" parent="21" name="device_id">
+    <column id="51" parent="21" name="device_id">
       <Position>4</Position>
       <DataType>bigint|0s</DataType>
       <StateNumber>277863</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="51" parent="21" name="parent_id">
+    <column id="52" parent="21" name="parent_id">
       <Position>5</Position>
       <DataType>bigint|0s</DataType>
       <StateNumber>277863</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="52" parent="21" name="res_id">
+    <column id="53" parent="21" name="res_id">
       <Position>6</Position>
       <DataType>bigint|0s</DataType>
       <StateNumber>277863</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <index id="53" parent="21" name="podstation_pkey">
+    <index id="54" parent="21" name="podstation_pkey">
       <ObjectId>65614</ObjectId>
       <StateNumber>277863</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <key id="54" parent="21" name="podstation_pkey">
+    <index id="55" parent="21" name="fki_podstation_parent_id_fk_podstation_id">
+      <ObjectId>81965</ObjectId>
+      <StateNumber>291385</StateNumber>
+      <ColNames>parent_id</ColNames>
+    </index>
+    <key id="56" parent="21" name="podstation_pkey">
       <ObjectId>65615</ObjectId>
       <StateNumber>277863</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>podstation_pkey</UnderlyingIndexName>
     </key>
-    <foreign-key id="55" parent="21" name="podstation_device_id_fk_device_id">
+    <foreign-key id="57" parent="21" name="podstation_device_id_fk_device_id">
       <ObjectId>65616</ObjectId>
       <StateNumber>277863</StateNumber>
       <ColNames>device_id</ColNames>
@@ -351,7 +363,19 @@
       <RefKeyName>devices_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="56" parent="21" name="podstation_res_id_fk_res_id">
+    <foreign-key id="58" parent="21" name="podstation_parent_id_fk_podstation_id">
+      <ObjectId>81960</ObjectId>
+      <Deferrable>1</Deferrable>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <StateNumber>291384</StateNumber>
+      <ColNames>parent_id</ColNames>
+      <RefTableId>65608</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>podstation</RefTableName>
+      <RefKeyName>podstation_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="59" parent="21" name="podstation_res_id_fk_res_id">
       <ObjectId>65621</ObjectId>
       <StateNumber>277863</StateNumber>
       <ColNames>res_id</ColNames>
@@ -361,27 +385,27 @@
       <RefKeyName>res_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="57" parent="22" name="id">
+    <column id="60" parent="22" name="id">
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>276434</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="58" parent="22" name="values">
+    <column id="61" parent="22" name="name">
       <Position>2</Position>
-      <DataType>&quot;char&quot;|0s</DataType>
-      <StateNumber>276434</StateNumber>
-      <TypeId>18</TypeId>
+      <DataType>varchar|0s</DataType>
+      <StateNumber>291211</StateNumber>
+      <TypeId>1043</TypeId>
     </column>
-    <index id="59" parent="22" name="res_pkey">
+    <index id="62" parent="22" name="res_pkey">
       <ObjectId>65601</ObjectId>
-      <StateNumber>276434</StateNumber>
+      <StateNumber>290332</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <key id="60" parent="22" name="res_pkey">
+    <key id="63" parent="22" name="res_pkey">
       <ObjectId>65602</ObjectId>
       <StateNumber>276434</StateNumber>
       <ColNames>id</ColNames>

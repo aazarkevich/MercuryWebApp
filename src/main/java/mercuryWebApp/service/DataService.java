@@ -5,6 +5,7 @@ import mercuryWebApp.models.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.Date;
 import java.util.List;
 
 @Service
@@ -28,7 +29,12 @@ public class DataService {
         dataDao.delete(data);
     }
 
-    public List<Data> allDataToDay() {
-        return dataDao.allDataToDay();
+    public List<Data> valuesToDay() {
+        return dataDao.valuesToDay();
     }
+
+    public List<Data> valuesChoiseDay(Date date) {
+        return dataDao.valuesChoiseDay(date);
+    }
+
 }

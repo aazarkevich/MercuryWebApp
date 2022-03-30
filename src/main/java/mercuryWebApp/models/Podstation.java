@@ -6,12 +6,14 @@ import java.util.Objects;
 @Entity
 @Table(name = "podstation", schema = "public", catalog = "mercury2022")
 public class Podstation {
+    @Column(nullable = false)
     private long id;
     private String name;
     private char typeConnection;
     private Long parentId;
-    private Device deviceByDeviceId;
+    private Device device;
     private Res resByResId;
+    private Podstation parent;
 
     @Id
     @Column(name = "id", nullable = false)
@@ -72,12 +74,12 @@ public class Podstation {
 
     @ManyToOne
     @JoinColumn(name = "device_id", referencedColumnName = "id")
-    public Device getDeviceByDeviceId() {
-        return deviceByDeviceId;
+    public Device getDevice() {
+        return device;
     }
 
-    public void setDeviceByDeviceId(Device deviceByDeviceId) {
-        this.deviceByDeviceId = deviceByDeviceId;
+    public void setDevice(Device device) {
+        this.device = device;
     }
 
     @ManyToOne
@@ -88,5 +90,27 @@ public class Podstation {
 
     public void setResByResId(Res resByResId) {
         this.resByResId = resByResId;
+    }
+
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "parent_id", referencedColumnName = "id", insertable = false, updatable = false)
+    public Podstation getParent() {
+        return parent;
+    }
+
+    public void setParent(Podstation parent) {
+        this.parent = parent;
+    }
+
+    @Override
+    public String toString() {
+        return "Podstation{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", typeConnection=" + typeConnection +
+                ", parentId=" + parentId +
+                ", device=" + device +
+                ", resByResId=" + resByResId +
+                '}';
     }
 }

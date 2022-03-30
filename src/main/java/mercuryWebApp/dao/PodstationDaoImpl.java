@@ -35,8 +35,8 @@ public class PodstationDaoImpl implements PodstationDao {
     }
 
     @Override
-    public Podstation read(int id) {
-        Podstation podstation = (Podstation) getSession().createQuery("from Podstation where id = " + id).getSingleResult();
+    public Podstation read(long id) {
+        Podstation podstation = (Podstation) getSession().createQuery("from Podstation where id = :id").setParameter("id", id).getSingleResult();
         loger.info("Get podstation" + podstation);
         return podstation;
     }
@@ -64,4 +64,15 @@ public class PodstationDaoImpl implements PodstationDao {
     public List<Podstation> allPodstationRes() {
         return null;
     }
+
+    @Override
+    public List<Podstation> childrenPodstation(long parentId) {
+        return getSession().createQuery("from Podstation where parentId = :parentId").setParameter("parentId", parentId).list();
+    }
+
+    @Override
+    public List<Podstation> parentPodstation() {
+        return getSession().createQuery("from Podstation  where parentId = null ").list();
+    }
+
 }

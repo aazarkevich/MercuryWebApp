@@ -16,7 +16,7 @@ public class PodstationService {
         podstationDao.save(podstation);
     }
 
-    public Podstation readPodstation(int id) {
+    public Podstation readPodstation(long id) {
         return podstationDao.read(id);
     }
 
@@ -30,5 +30,13 @@ public class PodstationService {
 
     public List<Podstation> allPodstation() {
         return podstationDao.allPodstation();
+    }
+
+    public List<Podstation> childrenPodstation(long parentId) {
+        return podstationDao.childrenPodstation(parentId);
+    }
+
+    public List<Podstation> parentPodstation() {
+        return podstationDao.parentPodstation();
     }
 }

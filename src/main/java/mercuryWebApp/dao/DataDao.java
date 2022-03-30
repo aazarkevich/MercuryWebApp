@@ -2,6 +2,7 @@ package mercuryWebApp.dao;
 
 import mercuryWebApp.models.Data;
 
+import java.sql.Date;
 import java.util.List;
 
 public interface DataDao {
@@ -13,5 +14,9 @@ public interface DataDao {
 
     void delete(Data data);
 
-    List<Data> allDataToDay();
+    List<Data> valuesToDay();
+
+    List<Data> valuesChoiseDay(Date date);
+
+
 }

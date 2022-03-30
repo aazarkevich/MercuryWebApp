@@ -7,7 +7,7 @@ import java.util.List;
 public interface PodstationDao {
     void save(Podstation podstation);
 
-    Podstation read(int id);
+    Podstation read(long id);
 
     void update(Podstation podstation);
 
@@ -16,4 +16,8 @@ public interface PodstationDao {
     List<Podstation> allPodstation();
 
     List<Podstation> allPodstationRes();
+
+    List<Podstation> childrenPodstation(long parentId);
+
+    List<Podstation> parentPodstation();
 }

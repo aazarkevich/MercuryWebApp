@@ -12,10 +12,12 @@ public class Device {
     private int port;
     private int serialNumber;
     private Integer networkAdress;
+    private Res res;
+    private Podstation podstation;
 
     @Id
     @Column(name = "id", nullable = false)
-    @GeneratedValue(generator= "device_id_seq")
+    @GeneratedValue(generator = "device_id_seq")
     public long getId() {
         return id;
     }
@@ -76,9 +78,30 @@ public class Device {
                 Objects.equals(networkAdress, device.networkAdress);
     }
 
+
     @Override
     public int hashCode() {
         return Objects.hash(id, ip, port, serialNumber, networkAdress);
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "res_id", referencedColumnName = "id")
+    public Res getRes() {
+        return res;
+    }
+
+    public void setRes(Res res) {
+        this.res = res;
+    }
+
+    @OneToOne
+    @JoinColumn(name = "podstation_id", referencedColumnName = "id")
+    public Podstation getPodstation() {
+        return podstation;
+    }
+
+    public void setPodstation(Podstation podstation) {
+        this.podstation = podstation;
     }
 
     @Override
@@ -91,4 +114,5 @@ public class Device {
                 ", networkAdress=" + networkAdress +
                 '}';
     }
+
 }

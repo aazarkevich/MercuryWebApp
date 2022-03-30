@@ -3,7 +3,7 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.16">
     <root id="1">
       <ServerVersion>9.1.21</ServerVersion>
-      <StartupTime>1646777745</StartupTime>
+      <StartupTime>1647347172</StartupTime>
     </root>
     <database id="2" parent="1" name="mercury">
       <ObjectId>41943</ObjectId>
@@ -16,7 +16,7 @@
     <database id="4" parent="1" name="mercury2022">
       <ObjectId>65564</ObjectId>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>280085</IntrospectionStateNumber>
+      <IntrospectionStateNumber>290342</IntrospectionStateNumber>
       <Current>1</Current>
     </database>
     <database id="5" parent="1" name="postgres">
@@ -52,7 +52,7 @@
       <Comment>standard public schema</Comment>
       <StateNumber>2</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>280093</IntrospectionStateNumber>
+      <IntrospectionStateNumber>290350</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <access-method id="11" parent="4" name="btree">
@@ -97,27 +97,34 @@
       <SequenceIdentity>1</SequenceIdentity>
       <CacheSize>1</CacheSize>
     </sequence>
-    <table id="18" parent="10" name="data">
+    <sequence id="18" parent="10" name="podstation_id_seq">
+      <ObjectId>73761</ObjectId>
+      <StateNumber>281581</StateNumber>
+      <Owner>postgres</Owner>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <table id="19" parent="10" name="data">
       <ObjectId>65573</ObjectId>
       <Owner>postgres</Owner>
       <StateNumber>267466</StateNumber>
     </table>
-    <table id="19" parent="10" name="devices">
+    <table id="20" parent="10" name="device">
       <ObjectId>65565</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>280049</StateNumber>
+      <StateNumber>280097</StateNumber>
     </table>
-    <table id="20" parent="10" name="podstation">
+    <table id="21" parent="10" name="podstation">
       <ObjectId>65608</ObjectId>
       <Owner>postgres</Owner>
       <StateNumber>280049</StateNumber>
     </table>
-    <table id="21" parent="10" name="res">
+    <table id="22" parent="10" name="res">
       <ObjectId>65598</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>277863</StateNumber>
+      <StateNumber>290332</StateNumber>
     </table>
-    <column id="22" parent="18" name="id">
+    <column id="23" parent="19" name="id">
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
@@ -125,84 +132,84 @@
       <DefaultExpression>nextval(&apos;data_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>20</TypeId>
     </column>
-    <column id="23" parent="18" name="energy_reset_sum">
+    <column id="24" parent="19" name="energy_reset_sum">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <StateNumber>267458</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="24" parent="18" name="power_sum">
+    <column id="25" parent="19" name="power_sum">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <StateNumber>267458</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="25" parent="18" name="energy_day_start">
+    <column id="26" parent="19" name="energy_day_start">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
       <StateNumber>267458</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="26" parent="18" name="energy_day">
+    <column id="27" parent="19" name="energy_day">
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
       <StateNumber>267458</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="27" parent="18" name="power_day">
+    <column id="28" parent="19" name="power_day">
       <Position>6</Position>
       <DataType>varchar(255)|0s</DataType>
       <StateNumber>267458</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="28" parent="18" name="error">
+    <column id="29" parent="19" name="error">
       <Position>7</Position>
       <DataType>varchar(255)|0s</DataType>
       <StateNumber>267458</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="29" parent="18" name="date">
+    <column id="30" parent="19" name="date">
       <Position>8</Position>
       <DataType>date|0s</DataType>
       <StateNumber>267458</StateNumber>
       <TypeId>1082</TypeId>
     </column>
-    <column id="30" parent="18" name="device_id">
+    <column id="31" parent="19" name="device_id">
       <Position>9</Position>
       <DataType>bigint|0s</DataType>
       <StateNumber>267465</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <index id="31" parent="18" name="data_pkey">
+    <index id="32" parent="19" name="data_pkey">
       <ObjectId>65579</ObjectId>
       <StateNumber>267458</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <index id="32" parent="18" name="fki_data_device_id_fk_device_id">
+    <index id="33" parent="19" name="fki_data_device_id_fk_device_id">
       <ObjectId>65595</ObjectId>
       <StateNumber>267467</StateNumber>
       <ColNames>device_id</ColNames>
     </index>
-    <key id="33" parent="18" name="data_pkey">
+    <key id="34" parent="19" name="data_pkey">
       <ObjectId>65580</ObjectId>
       <StateNumber>267458</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>data_pkey</UnderlyingIndexName>
     </key>
-    <foreign-key id="34" parent="18" name="data_device_id_fk_device_id">
+    <foreign-key id="35" parent="19" name="data_device_id_fk_device_id">
       <ObjectId>65590</ObjectId>
       <StateNumber>267466</StateNumber>
       <ColNames>device_id</ColNames>
       <RefTableId>65565</RefTableId>
       <RefColPositions>1</RefColPositions>
-      <RefTableName>devices</RefTableName>
+      <RefTableName>device</RefTableName>
       <RefKeyName>devices_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="35" parent="19" name="id">
+    <column id="36" parent="20" name="id">
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
@@ -210,60 +217,60 @@
       <DefaultExpression>nextval(&apos;device_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>20</TypeId>
     </column>
-    <column id="36" parent="19" name="ip">
+    <column id="37" parent="20" name="ip">
       <Position>2</Position>
       <DataType>varchar(15)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>267455</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="37" parent="19" name="port">
+    <column id="38" parent="20" name="port">
       <Position>3</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>267455</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="38" parent="19" name="serial_number">
+    <column id="39" parent="20" name="serial_number">
       <Position>4</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>267455</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="39" parent="19" name="network_adress">
+    <column id="40" parent="20" name="network_adress">
       <Position>5</Position>
       <DataType>integer|0s</DataType>
       <StateNumber>267455</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="40" parent="19" name="res_id">
+    <column id="41" parent="20" name="res_id">
       <Position>8</Position>
       <DataType>bigint|0s</DataType>
       <StateNumber>277852</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="41" parent="19" name="podstation_id">
+    <column id="42" parent="20" name="podstation_id">
       <Position>9</Position>
       <DataType>bigint|0s</DataType>
       <StateNumber>280048</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <index id="42" parent="19" name="devices_pkey">
+    <index id="43" parent="20" name="devices_pkey">
       <ObjectId>65568</ObjectId>
       <StateNumber>267455</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <key id="43" parent="19" name="devices_pkey">
+    <key id="44" parent="20" name="devices_pkey">
       <ObjectId>65569</ObjectId>
       <StateNumber>267455</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>devices_pkey</UnderlyingIndexName>
     </key>
-    <foreign-key id="44" parent="19" name="devices_res_id_fk_res_id">
+    <foreign-key id="45" parent="20" name="devices_res_id_fk_res_id">
       <ObjectId>65603</ObjectId>
       <StateNumber>277853</StateNumber>
       <ColNames>res_id</ColNames>
@@ -273,7 +280,7 @@
       <RefKeyName>res_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="45" parent="19" name="devices_podstation_id_fk_podstation_id">
+    <foreign-key id="46" parent="20" name="devices_podstation_id_fk_podstation_id">
       <ObjectId>73756</ObjectId>
       <StateNumber>280049</StateNumber>
       <ColNames>podstation_id</ColNames>
@@ -283,68 +290,68 @@
       <RefKeyName>podstation_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="46" parent="20" name="id">
+    <column id="47" parent="21" name="id">
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>277863</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="47" parent="20" name="name">
+    <column id="48" parent="21" name="name">
       <Position>2</Position>
       <DataType>varchar|0s</DataType>
       <StateNumber>277863</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="48" parent="20" name="type_connection">
+    <column id="49" parent="21" name="type_connection">
       <Position>3</Position>
       <DataType>&quot;char&quot;|0s</DataType>
       <StateNumber>277863</StateNumber>
       <TypeId>18</TypeId>
     </column>
-    <column id="49" parent="20" name="device_id">
+    <column id="50" parent="21" name="device_id">
       <Position>4</Position>
       <DataType>bigint|0s</DataType>
       <StateNumber>277863</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="50" parent="20" name="parent_id">
+    <column id="51" parent="21" name="parent_id">
       <Position>5</Position>
       <DataType>bigint|0s</DataType>
       <StateNumber>277863</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="51" parent="20" name="res_id">
+    <column id="52" parent="21" name="res_id">
       <Position>6</Position>
       <DataType>bigint|0s</DataType>
       <StateNumber>277863</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <index id="52" parent="20" name="podstation_pkey">
+    <index id="53" parent="21" name="podstation_pkey">
       <ObjectId>65614</ObjectId>
       <StateNumber>277863</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <key id="53" parent="20" name="podstation_pkey">
+    <key id="54" parent="21" name="podstation_pkey">
       <ObjectId>65615</ObjectId>
       <StateNumber>277863</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>podstation_pkey</UnderlyingIndexName>
     </key>
-    <foreign-key id="54" parent="20" name="podstation_device_id_fk_device_id">
+    <foreign-key id="55" parent="21" name="podstation_device_id_fk_device_id">
       <ObjectId>65616</ObjectId>
       <StateNumber>277863</StateNumber>
       <ColNames>device_id</ColNames>
       <RefTableId>65565</RefTableId>
       <RefColPositions>1</RefColPositions>
-      <RefTableName>devices</RefTableName>
+      <RefTableName>device</RefTableName>
       <RefKeyName>devices_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="55" parent="20" name="podstation_res_id_fk_res_id">
+    <foreign-key id="56" parent="21" name="podstation_res_id_fk_res_id">
       <ObjectId>65621</ObjectId>
       <StateNumber>277863</StateNumber>
       <ColNames>res_id</ColNames>
@@ -354,27 +361,27 @@
       <RefKeyName>res_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="56" parent="21" name="id">
+    <column id="57" parent="22" name="id">
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>276434</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="57" parent="21" name="values">
+    <column id="58" parent="22" name="values">
       <Position>2</Position>
-      <DataType>&quot;char&quot;|0s</DataType>
-      <StateNumber>276434</StateNumber>
-      <TypeId>18</TypeId>
+      <DataType>varchar|0s</DataType>
+      <StateNumber>290332</StateNumber>
+      <TypeId>1043</TypeId>
     </column>
-    <index id="58" parent="21" name="res_pkey">
+    <index id="59" parent="22" name="res_pkey">
       <ObjectId>65601</ObjectId>
-      <StateNumber>276434</StateNumber>
+      <StateNumber>290332</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <key id="59" parent="21" name="res_pkey">
+    <key id="60" parent="22" name="res_pkey">
       <ObjectId>65602</ObjectId>
       <StateNumber>276434</StateNumber>
       <ColNames>id</ColNames>

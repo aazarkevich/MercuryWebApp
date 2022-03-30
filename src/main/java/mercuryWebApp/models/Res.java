@@ -6,8 +6,9 @@ import java.util.Objects;
 @Entity
 @Table(name = "res", schema = "public", catalog = "mercury2022")
 public class Res {
+
     private long id;
-    private char values;
+    private String name;
 
     @Id
     @Column(name = "id", nullable = false)
@@ -20,13 +21,13 @@ public class Res {
     }
 
     @Basic
-    @Column(name = "values", nullable = true, length = -1)
-    public char getValues() {
-        return values;
+    @Column(name = "name", nullable = true, length = -1)
+    public String getName() {
+        return name;
     }
 
-    public void setValues(char values) {
-        this.values = values;
+    public void setName(String values) {
+        this.name = values;
     }
 
     @Override
@@ -35,11 +36,11 @@ public class Res {
         if (o == null || getClass() != o.getClass()) return false;
         Res res = (Res) o;
         return id == res.id &&
-                Objects.equals(values, res.values);
+                Objects.equals(name, res.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, values);
+        return Objects.hash(id, name);
     }
 }

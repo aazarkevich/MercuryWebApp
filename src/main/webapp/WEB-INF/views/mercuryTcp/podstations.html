@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Редактирование подстанции</title>
+    <link rel="stylesheet" href="/resources/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/resources/css/style.css">
+</head>
+<body>
+
+<nav th:replace="fragments/header :: header"></nav>
+<main role="main" class="container">
+    <a type="button" class="btn add-substation" href="" data-toggle="modal"
+       data-target="#add_substation">
+        Добавить подстанцию
+    </a>
+    <div class="modal fade" id="add_substation" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Добавить подстанцию</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="#" th:action="" method="post">
+                        <div class="form-group">
+                            <input class="form-control" type="text" th:field="*{name}" >
+                            <small id="nameHelp" class="form-text text-muted">Пример: ТП-001</small>
+<!--                            <select th:field="*{res}">-->
+<!--                                <options th:value="1">Северный</options>-->
+<!--                                <options th:value="2">Южный</options>-->
+<!--                                <options th:value="3">Восточный</options>-->
+<!--                                <options th:value="4">Западный</options>-->
+<!--                            </select>-->
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Отменить</button>
+                            <button type="submit" class="btn btn-primary">Сохранить</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="search_select">
+        <select class="w-100 select_substation" data-live-search="true">
+            <option th:each="parent: ${parentPodstations}" th:value="${parent.id}" th:text="${parent.name}"></option>
+        </select>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h6 class="text-muted">Подстанция</h6>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <div class="d-flex justify-content-between">
+                            <span style="font-size: 1.2rem" th:text="${podstation.name}"></span>
+                        </div>
+                    </li>
+                    <ul th:if="${childrenPodstation[0].device}" class="list-group text-muted list-group-flush">
+                        <li class="list-group-item">
+                            ip: <span th:text="${childrenPodstation[0].device.ip}">ip</span>
+                        </li>
+                        <li class="list-group-item">
+                            Порт: <span th:text="${childrenPodstation[0].device.port}">port</span>
+                        </li>
+                    </ul>
+                    <ul th:each="children: ${childrenPodstation}" class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div class="d-flex justify-content-between">
+                                <span th:text="${children.name}"></span>
+                            </div>
+                        </li>
+                        <ul class="list-group text-muted list-group-flush">
+                            <li class="list-group-item ">
+                                серийный номер: <span th:text="${children.device.serialNumber}"></span>
+                            </li>
+                            <li class="list-group-item ">
+                                сетевой адрес: <span th:text="${children.device.networkAdress}"></span>
+                            </li>
+                        </ul>
+                    </ul>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+</body>
+<script src="/resources/js/jquery.js"></script>
+<script src="/resources/js/popper.min.js"></script>
+<script src="/resources/js/bootstrap.min.js"></script>
+<script src="/resources/js/bootstrap-select.min.js"></script>
+<script src="/resources/js/addTP.js"></script>
+</html>

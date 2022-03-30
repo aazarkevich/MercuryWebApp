@@ -1,0 +1,37 @@
+
+<div th:fragment="values" class="col mt-3">
+    <div class="row ">
+        <div class="col-3 align-items-center "><label class="mr-1" for="DateValues">Дата:</label>
+            <input class="mr-1" type="date" name="" id="DateValues" value="" onclick="">
+            <span><u><a  onclick="getValueDate()"> обновить</a></u></span>
+        </div>
+    </div>
+        <table class="table table-striped table-bordered" id="info-table">
+            <thead>
+            <tr>
+                <th class="text-center">#</th>
+                <th class="text-center">ТП</th>
+                <th class="text-center">Т</th>
+                <th class="text-center">Серийный номер</th>
+                <th class="text-center">Показания</th>
+                <th class="text-center">Мощность</th>
+                <th class="text-center">Ошибка</th>
+                <th class="text-center">Дата</th>
+                <th class="text-center">РЭС</th>
+            </tr>
+            </thead>
+            <tbody >
+            <tr th:each="values: ${valuesList}">
+                <td th:text="${valuesStat.index + 1}"></td>
+                <td th:text="${values.device.podstation.parent.name}"></td>
+                <td th:text="${values.device.podstation.name}"></td>
+                <td th:text="${values.device.serialNumber}"/>
+                <td th:text="${values.energyResetSum}"/>
+                <td th:text="${values.powerSum}"/>
+                <td th:text="${values.error}"/>
+                <td th:text="${values.date}"/>
+                <td th:text="${values.device.res.name}"/>
+            </tr>
+            </tbody>
+        </table>
+</div>
