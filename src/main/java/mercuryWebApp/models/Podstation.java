@@ -27,7 +27,7 @@ public class Podstation {
     }
 
     @Basic
-    @Column(name = "name", nullable = true, length = -1)
+    @Column(name = "name", nullable = true)
     public String getName() {
         return name;
     }

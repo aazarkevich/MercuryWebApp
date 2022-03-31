@@ -72,7 +72,7 @@ public class PodstationDaoImpl implements PodstationDao {
 
     @Override
     public List<Podstation> parentPodstation() {
-        return getSession().createQuery("from Podstation  where parentId = null ").list();
+        return getSession().createQuery("from Podstation  where parentId = null and typeConnection = 'T' ").list();
     }
 
 }

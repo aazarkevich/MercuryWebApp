@@ -7,65 +7,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1a648cc-5298-4043-9b5f-8ecfc63b7785" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/fragments/header.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/fragments/values.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mercuryTcp/podstations.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/addTP.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/tableValues.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/28731021-a58d-4cfa-b3fa-378566ea2919.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/28731021-a58d-4cfa-b3fa-378566ea2919.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/28731021-a58d-4cfa-b3fa-378566ea2919/storage_v2/_src_/database/mercury2022.kaJp7w/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/28731021-a58d-4cfa-b3fa-378566ea2919/storage_v2/_src_/database/mercury2022.kaJp7w/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ccbd18cf-2ecd-4056-9225-a83de5657dad.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ccbd18cf-2ecd-4056-9225-a83de5657dad.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ccbd18cf-2ecd-4056-9225-a83de5657dad/storage_v2/_src_/database/mercury2022.kaJp7w/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ccbd18cf-2ecd-4056-9225-a83de5657dad/storage_v2/_src_/database/mercury2022.kaJp7w/schema/public.abK9xQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mercuryWebApp/dao/ResDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mercuryWebApp/dao/ResDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mercuryWebApp/service/ResService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/fragments/createPodstation.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/fragments/editPodstation.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/fragments/findPodstation.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mercuryTcp/showPodstation.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mercuryWebApp/controllers/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mercuryWebApp/controllers/IndexController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mercuryWebApp/controllers/MercuryTcpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mercuryWebApp/controllers/MercuryTcpController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mercuryWebApp/dao/DataDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mercuryWebApp/dao/DataDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mercuryWebApp/dao/DataDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mercuryWebApp/dao/DataDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mercuryWebApp/dao/PodstationDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mercuryWebApp/dao/PodstationDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mercuryWebApp/dao/PodstationDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mercuryWebApp/dao/PodstationDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mercuryWebApp/models/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mercuryWebApp/models/Data.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mercuryWebApp/models/Device.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mercuryWebApp/models/Device.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mercuryWebApp/models/Podstation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mercuryWebApp/models/Podstation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mercuryWebApp/models/Res.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mercuryWebApp/models/Res.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mercuryWebApp/service/DataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mercuryWebApp/service/DataService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mercuryWebApp/service/PodstationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mercuryWebApp/service/PodstationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mercuryTcp/mercuryTcpData.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mercuryTcp/mercuryTcpData.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/edit.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/new.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/show.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mercuryWebApp/controllers/IndexController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mercuryWebApp/controllers/IndexController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/fragments/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/fragments/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/fragments/values.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/fragments/values.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mercuryTcp/mercuryTcpData.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mercuryTcp/TcpData.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mercuryTcp/podstations.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mercuryTcp/podstations.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mercuryWebApp/controllers/MercuryTcpController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mercuryWebApp/controllers/MercuryTcpController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mercuryWebApp/dao/DataDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mercuryWebApp/dao/DataDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mercuryWebApp/dao/DataDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mercuryWebApp/dao/DataDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mercuryWebApp/dao/PodstationDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mercuryWebApp/dao/PodstationDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mercuryWebApp/dao/PodstationDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mercuryWebApp/dao/PodstationDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mercuryWebApp/models/Data.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mercuryWebApp/models/Data.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mercuryWebApp/models/Device.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mercuryWebApp/models/Device.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mercuryWebApp/models/Podstation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mercuryWebApp/models/Podstation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mercuryWebApp/models/Res.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mercuryWebApp/models/Res.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mercuryWebApp/service/DataService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mercuryWebApp/service/DataService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mercuryWebApp/service/PodstationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mercuryWebApp/service/PodstationService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/mercuryWebApp/controllers/IndexController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/mercuryWebApp/controllers/IndexController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/mercuryWebApp/controllers/MercuryTcpController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/mercuryWebApp/controllers/MercuryTcpController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/mercuryWebApp/dao/DataDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/mercuryWebApp/dao/DataDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/mercuryWebApp/dao/DataDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/mercuryWebApp/dao/DataDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/mercuryWebApp/dao/PodstationDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/mercuryWebApp/dao/PodstationDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/mercuryWebApp/controllers/PeopleController.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/mercuryWebApp/dao/PodstationDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/mercuryWebApp/dao/PodstationDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/mercuryWebApp/models/Data.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/mercuryWebApp/models/Data.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/mercuryWebApp/models/Device.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/mercuryWebApp/models/Device.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/mercuryWebApp/models/Podstation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/mercuryWebApp/models/Podstation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/mercuryWebApp/models/Res.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/mercuryWebApp/models/Res.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/mercuryWebApp/service/DataService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/mercuryWebApp/service/DataService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/mercuryWebApp/service/PodstationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/mercuryWebApp/service/PodstationService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/views/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/views/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/views/people/edit.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/views/people/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/views/people/new.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/views/people/show.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/views/fragments/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/views/fragments/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/views/fragments/values.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/views/fragments/values.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/views/mercuryTcp/mercuryTcpData.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/views/mercuryTcp/podstations.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/views/mercuryTcp/podstations.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -190,10 +157,10 @@
         <option value="hibernate-configuration-3.0" />
         <option value="hibernate-main-3.0" />
         <option value="hibernate-configuration-5.2" />
-        <option value="Interface" />
-        <option value="Class" />
         <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -241,21 +208,21 @@
     <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\java\MercuryWebApp\src\main\webapp\WEB-INF\static\js" />
+      <recent name="D:\java\MercuryWebApp\src\main\webapp\WEB-INF\static\css" />
+      <recent name="D:\java\MercuryWebApp\src\main\webapp\WEB-INF\views\mercuryTcp" />
+      <recent name="C:\Users\Артем\IdeaProjects\springWebApp\src\main\webapp\WEB-INF" />
+    </key>
+    <key name="ImportMappingsDialog.RecentPackages">
+      <recent name="springcourse.models" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\java\MercuryWebApp\src\main\webapp\WEB-INF\views" />
       <recent name="D:\java\MercuryWebApp\src\main\webapp" />
       <recent name="D:\java\MercuryWebApp\src\main\webapp\WEB-INF\views\mercuryTcp" />
       <recent name="D:\java\MercuryWebApp\src\main\webapp\WEB-INF" />
       <recent name="D:\java\MercuryWebApp\src\main\java\springcourse\dao" />
-    </key>
-    <key name="ImportMappingsDialog.RecentPackages">
-      <recent name="springcourse.models" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\java\MercuryWebApp\src\main\webapp\WEB-INF\static\js" />
-      <recent name="D:\java\MercuryWebApp\src\main\webapp\WEB-INF\static\css" />
-      <recent name="D:\java\MercuryWebApp\src\main\webapp\WEB-INF\views\mercuryTcp" />
-      <recent name="C:\Users\Артем\IdeaProjects\springWebApp\src\main\webapp\WEB-INF" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -469,6 +436,7 @@
       <workItem from="1648193698792" duration="10890000" />
       <workItem from="1648445855122" duration="17959000" />
       <workItem from="1648472594461" duration="15453000" />
+      <workItem from="1648617731382" duration="22652000" />
     </task>
     <servers />
   </component>

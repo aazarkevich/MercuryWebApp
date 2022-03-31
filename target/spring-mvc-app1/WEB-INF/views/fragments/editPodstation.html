@@ -1,0 +1,38 @@
+<div th:fragment="edit" class="container">
+    <div class="row">
+        <div class="col">
+            <h6 class="text-muted">Подстанция</h6>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <div class="d-flex justify-content-between">
+                        <span style="font-size: 1.2rem" th:text="${podstation.name}"></span>
+                    </div>
+                </li>
+                <ul th:if="${childrenPodstation[0].device}" class="list-group text-muted list-group-flush">
+                    <li class="list-group-item">
+                        ip: <span th:text="${childrenPodstation[0].device.ip}">ip</span>
+                    </li>
+                    <li class="list-group-item">
+                        Порт: <span th:text="${childrenPodstation[0].device.port}">port</span>
+                    </li>
+                </ul>
+                <ul th:each="children: ${childrenPodstation}" class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <div class="d-flex justify-content-between">
+                            <span th:text="${children.name}"></span>
+                        </div>
+                    </li>
+                    <ul class="list-group text-muted list-group-flush">
+                        <li class="list-group-item ">
+                            серийный номер: <span th:text="${children.device.serialNumber}"></span>
+                        </li>
+                        <li class="list-group-item ">
+                            сетевой адрес: <span th:text="${children.device.networkAdress}"></span>
+                        </li>
+                    </ul>
+                </ul>
+
+            </ul>
+        </div>
+    </div>
+</div>

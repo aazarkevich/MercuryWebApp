@@ -1,0 +1,6 @@
+<div th:fragment="findPodstation" class="search_select">
+    <select class="w-100 select_substation" data-live-search="true">
+        <option th:each="parent: ${parentPodstations}" th:value="${parent.id}"
+                th:text="${parent.name}"></option>
+    </select>
+</div>
