@@ -1,4 +1,4 @@
-<div th:fragment="createPodstation">
+<div th:fragment="createPodstation" xmlns:th="http://www.w3.org/1999/xhtml">
     <a type="button" class="btn add-substation" href="" data-toggle="modal"
        data-target="#add_substation">
         Добавить подстанцию
@@ -18,9 +18,11 @@
                         <div class="form-group">
                             <input class="form-control" type="text" th:field="*{name}" id="name"/>
                             <small id="nameHelp" class="form-text text-muted">Пример: ТП-001</small>
-                            <select class="form-control" th:field="*{resByResId}" id="resByResId">
-                                <option  th:each="res: ${resList}" th:value="${res}"
-                                        th:text="${res.name}" ></option>
+                            <select class="form-control" id="resByResId" name="resId">
+                                <option value="1">Северный</option>
+                                <option value="2">Южный</option>
+                                <option value="3">Восточный</option>
+                                <option value="4">Западный</option>
                             </select>
                             <small id="resHelp" class="form-text text-muted">РЭС</small>
                         </div>

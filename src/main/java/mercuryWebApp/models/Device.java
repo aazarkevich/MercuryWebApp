@@ -94,7 +94,7 @@ public class Device {
         this.res = res;
     }
 
-    @OneToOne
+    @OneToOne(cascade = {CascadeType.ALL})
     @JoinColumn(name = "podstation_id", referencedColumnName = "id")
     public Podstation getPodstation() {
         return podstation;

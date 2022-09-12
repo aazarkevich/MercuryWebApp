@@ -6,10 +6,9 @@ import java.util.Objects;
 @Entity
 @Table(name = "podstation", schema = "public", catalog = "mercury2022")
 public class Podstation {
-    @Column(nullable = false)
     private long id;
     private String name;
-    private char typeConnection;
+    private String typeConnection;
     private Long parentId;
     private Device device;
     private Res resByResId;
@@ -38,11 +37,11 @@ public class Podstation {
 
     @Basic
     @Column(name = "type_connection", nullable = true, length = -1)
-    public char getTypeConnection() {
+    public String getTypeConnection() {
         return typeConnection;
     }
 
-    public void setTypeConnection(char typeConnection) {
+    public void setTypeConnection(String typeConnection) {
         this.typeConnection = typeConnection;
     }
 
@@ -72,7 +71,7 @@ public class Podstation {
         return Objects.hash(id, name, typeConnection, parentId);
     }
 
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.ALL})
     @JoinColumn(name = "device_id", referencedColumnName = "id")
     public Device getDevice() {
         return device;

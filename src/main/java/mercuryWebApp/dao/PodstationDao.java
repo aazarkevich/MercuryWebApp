@@ -5,7 +5,7 @@ import mercuryWebApp.models.Podstation;
 import java.util.List;
 
 public interface PodstationDao {
-    void save(Podstation podstation);
+    Long save(Podstation podstation);
 
     Podstation read(long id);
 

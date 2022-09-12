@@ -1,6 +1,5 @@
 package mercuryWebApp.dao;
 
-import mercuryWebApp.models.Device;
 import mercuryWebApp.models.Podstation;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -28,10 +27,9 @@ public class PodstationDaoImpl implements PodstationDao {
     }
 
     @Override
-    public void save(Podstation podstation) {
-        getSession().beginTransaction();
-        getSession().save(podstation);
-        getSession().getTransaction().commit();
+    public Long save(Podstation podstation) {
+        Long id = (Long) getSession().save(podstation);
+        return id;
     }
 
     @Override
@@ -43,16 +41,12 @@ public class PodstationDaoImpl implements PodstationDao {
 
     @Override
     public void update(Podstation podstation) {
-        getSession().beginTransaction();
         getSession().update(podstation);
-        getSession().getTransaction().commit();
     }
 
     @Override
     public void delete(Podstation podstation) {
-        getSession().beginTransaction();
         getSession().delete(podstation);
-        getSession().getTransaction().commit();
     }
 
     @Override
